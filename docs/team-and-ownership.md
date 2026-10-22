@@ -18,14 +18,14 @@ not alternated commit-by-commit).
 > must be added to her own GitHub account (Settings → Emails). The commit author/committer is
 > set correctly regardless, but GitHub links a commit to an account by verified email.
 
-## Phase ownership (split by subsystem, balanced 7 / 6)
+## Phase ownership (split by subsystem)
 
 | Phase | Title                                   | Owner    |
 |-------|-----------------------------------------|----------|
 | 0     | Dockerized project skeleton             | Elisheva |
 | 1     | AI benchmark harness                    | Elisheva |
 | 2     | Backend domain + DB skeleton            | Brachi   |
-| 3     | Auth / user account foundation          | Elisheva |
+| 3     | Auth / user account foundation          | Brachi   |
 | 4     | Upload + private storage                | Elisheva |
 | 5     | Queue + worker processing               | Brachi   |
 | 6     | Result page + secure file access        | Brachi   |
@@ -36,12 +36,23 @@ not alternated commit-by-commit).
 | 11    | Settings + account deletion             | Brachi   |
 | 12    | QA hardening + release readiness        | Elisheva |
 
-- **Elisheva (7):** 0, 1, 3, 4, 7, 8, 12 — foundation, AI, auth, upload, business & release.
-- **Brachi (6):** 2, 5, 6, 9, 10, 11 — backend/DB, processing, secure access, sharing/admin/account.
+- **Elisheva (6):** 0, 1, 4, 7, 8, 12 — foundation, AI, upload, business & release.
+- **Brachi (7):** 2, 3, 5, 6, 9, 10, 11 — backend/DB, auth, processing, secure access, sharing/admin/account.
 
-Areas of responsibility: Elisheva owns the foundation, AI, auth, upload and
-user-content/business tracks; Brachi owns the backend domain/DB, processing and
-security/access/admin tracks.
+Additional component ownership:
+
+| Component | Owner |
+|-----------|-------|
+| FAST-DEMO local inference vertical slice | Brachi |
+| VocalSplit Academy learning site | Brachi |
+
+Areas of responsibility: Elisheva owns the foundation, AI, upload and
+user-content/business tracks; Brachi owns the backend domain/DB, auth, processing,
+security/access/admin and local demo/learning tracks.
+
+The existing project history across `master` and `gh-pages` is attributed 22 commits
+to each contributor. The distribution is by coherent component ownership, not alternating
+authors commit-by-commit.
 
 ## How to commit under the right identity
 
